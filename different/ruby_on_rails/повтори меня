@@ -1,0 +1,83 @@
+Создание проекта
+  rails new my_app -T -O -m https://raw.github.com/rs-pro/rocket_cms/master/template.rb
+
+
+"строки" позволяют интерполяцию "#{str}other"
+'строка' не позволяет
+
+писать функции в  ApplicationHelper, чтобы их не подключать потом
+a.sort! изменит массив
+a[0..2] вернёт три элемента
+:foobar — символ
+
+хеши возвращают nil для несуществующих ключей attributes[:name]
+
+В файл с действиями и страницами поставить before_action :authenticate_user!
+
+
+http://stackoverflow.com/questions/7438313/pushing-to-git-returning-error-code-403-fatal-http-request-failed
+
+
+cat log/development.log | grep "POST \"/users/sign_in"
+
+переменные начинаются с @, значит, доступны во views
+
+
+Создать новую ветку git checkout -b static-pages
+
+<% исполняет код внутри %>
+
+<%= исполняет и вставляет %>
+
+(модули) могут быть подмешаны в Ruby-классы с помощью include
+
+Когда хэш — последний аргумент в вызове функции, фигурные скобки не являются обязательными
+
+rails console --sandbox
+
+pry(main)> User.find_by(email: "pipoca@vtomske.ru")
+
+\A начало строки, \z конец
+
+rails generate migration add_index_to_users_email
+
+Mongoid.raise_not_found_error = false
+
+Админка не для всех http://amrithaprasad.com/2012/09/19/getting-started-with-rails_admin.html
+
+Первый пуш на github
+  git reset Gemfile.lock
+  git reset lib/tasks/teagreat.rake~
+  git commit -m 'parser teagreat v0'
+  git pull --rebase
+  git stash
+  git pull --rebase
+  git push
+
+Скачивание базы:
+  cd config
+  cp mongoid.yml.sample mongoid.yml
+  cp application.yml.sample application.yml
+  cd ..
+  thor dl
+
+Тестировка формы
+  def create
+    render plain: params[:form_name].inspect
+  end
+Безопасное сохранение
+  @article = Article.new(params.require(:article).permit(:title, :text))
+Альтернатива к nested и добавление полей налету 
+    (от http://stackoverflow.com/questions/19599403/how-do-i-add-an-additional-field-to-a-form-via-ajax-in-rails-4)
+  http://railscasts.com/episodes/196-nested-model-form-part-1
+  http://railscasts.com/episodes/197-nested-model-form-part-2
+
+Запуск сервера
+  unicorn -c unicorn.conf
+
+Аудио и видео
+  http://www.schillmania.com/projects/soundmanager2/
+  http://www.videojs.com/
+
+Ещё раз поля налету, только от Глеба
+  https://github.com/ncri/nested_form_fields/
