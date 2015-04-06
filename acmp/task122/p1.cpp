@@ -1,39 +1,19 @@
-#include <iostream>
-#include <fstream>
 #include <vector>
-using namespace std;
-int max(int x,int y);
-
+int max(int x,int y){return x>y?x:y;}
 int main()
 {
-	ifstream in;
-	ofstream out;
-	in.open("INPUT.TXT");
-	out.open("OUTPUT.TXT");
-	int n,x,j,f,maxlength=0;
-	in>>n;
-	vector<int> v,length;
-	for(int i=0;i<n;i++)
+	FILE *f=fopen("INPUT.TXT","r"),*g=fopen("OUTPUT.TXT","w");
+	int n,i,j,ml=0;
+	fscanf(f,"%d",&n);
+	std::vector<int> v(n),l(n);
+	for(i=0;i<n;i++) fscanf(f,"%d",&v[i]);
+	l[0]=1;
+	for(i=1;i<n;i++)
 	{
-		in>>x;
-		v.push_back(x);
+		for(j=i-1;j>=0;j--) if(v[i]>v[j]) l[i]=max(l[j],l[i]); 
+		l[i]++;
+		ml=max(ml,l[i]);
 	}
-	for(int i=0;i<n;i++)
-	{
-		if(i==0) length.push_back(1);
-		else
-		{
-			length.push_back(0);
-			for(j=i-1;j>=0;j--) if(v[i]>v[j]) length[i]=max(length[j],length[i]); 
-			length[length.size()-1]++; 
-		} 
-		maxlength=max(maxlength,length[i]);
-	}
-	out<<maxlength;
+	fprintf(g,"%d",ml);
 	return 0;
-}
-
-int max(int x,int y)
-{
-	return x>y?x:y;
 }
