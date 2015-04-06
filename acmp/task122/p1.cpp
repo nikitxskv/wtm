@@ -24,19 +24,9 @@ int main()
 		else
 		{
 			length.push_back(0);
-			//f=0;
-			for(j=i-1;j>=0;j--)
-			{
-				if(v[i]>v[j])
-				{
-					length[i]=max(length[j],length[i]);
-					//f=1;
-				}
-			}
-			length[length.size()-1]++;
-			//if(f==1)length[length.size()-1]++;
-		}
-		//cout<<length[i]<<" ";
+			for(j=i-1;j>=0;j--) if(v[i]>v[j]) length[i]=max(length[j],length[i]); 
+			length[length.size()-1]++; 
+		} 
 		maxlength=max(maxlength,length[i]);
 	}
 	out<<maxlength;
