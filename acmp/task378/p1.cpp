@@ -8,29 +8,24 @@ int main()
 {
 //	freopen("INPUT.TXT","rt",stdin);
 //	freopen("OUTPUT.TXT","wt",stdout);
-	int n,count=0,sum=0;
+	int n,count=0,sum=0,currsum=0;
 	cin>>n;
-	vector<int> a(n);
-	for(int i=0;i<n;i++)
+	vector<int> a(n+1);
+	for(int i=1;i<a.size();i++)
 	{
 		cin>>a[i];
 		sum+=a[i];
 	}
-	vector<vector<int> > v(sum+1,vector<int>(0));
-	v[0]=a;
-	for(int i=0;i<v.size();i++)
+	vector<vector<bool> > posible(n+1,vector<bool>(sum+1,false));
+	posible[0][0]=true;
+	for(int i=1;i<a.size();i++)
 	{
-		if(v[i].size()==n)
+		currsum+=a[i];
+		for(int j=0;j<=currsum;j++)
 		{
-			count++;
-			for(int j=0;j<v[i].size();j++)
-			{
-				if(v[i][j]!=0&&v[i+v[i][j]].size()==0)
-				{
-					v[i+v[i][j]]=v[i];
-					v[i+v[i][j]][j]=0;
-				}
-			}
+			if(j<a[i]) posible[i][j]=posible[i-1][j];
+			else posible[i][j]=posible[i-1][j]|posible[i-1][j-a[i]];
+			if(i==n&posible[i][j]==true) count++;
 		}
 	}
 	cout<<count<<endl;
