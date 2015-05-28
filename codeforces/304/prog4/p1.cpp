@@ -18,10 +18,7 @@ int main()
 	int t,a,b;
 	cin>>t;
 	vector<int> v(N);
-	for(int i=2;i<N;i++)
-	{
-		if(!v[i]) for(int j=i;j<N;j+=i) v[j]=v[j/i]+1;
-	}
+	for(int i=2;i<N;i++) if(!v[i]) for(int j=i;j<N;j+=i) v[j]=v[j/i]+1; 
 	for(int i=2;i<N;i++) v[i]+=v[i-1];
 	for(int i=0;i<t;i++)
 	{
