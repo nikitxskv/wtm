@@ -18,6 +18,6 @@
 * __quora_catboost_w2v.ipynb__ 
 	* Example of using CatBoost on text data with word2vec embedding.
 
-* __sberbank_catboost_example_robust_.ipynb__ 
+* __sberbank\_catboost\_example\_robust\_.ipynb__ 
 	* Catboost performance at Sberbank competition.
 
