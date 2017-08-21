@@ -1,6 +1,6 @@
 # Tutorials
 
-* Main CatBoost tutorial with base features demonstration.
+* Main CatBoost tutorial with base features demonstration:
     * __kaggle_titanic_catboost_demo.ipynb__ 
     * __catboost_base_functions.ipynb__
 
