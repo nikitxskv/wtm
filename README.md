@@ -7,13 +7,13 @@
     * CatBoost and CoreML tutorial.
 
 * __kaggle_paribas.ipynb__ 
-    * Example of a good catboost performance at Kaggle.
+    * Catboost performance at Kaggle.
 
 * __kaggle_titanic_catboost_demo.ipynb__ 
 	* Catboost base features demonstration on the Titanic dataset.
 
 * __mlbootcamp_v_tutorial.ipynb__ 
-	* Catboost performance at Kaggle.
+	* Catboost performance at MLBootCamp.
 
 * __quora_catboost_w2v.ipynb__ 
 	* Example of using CatBoost on text data with word2vec embedding.
