@@ -1,5 +1,7 @@
 # Tutorials
 
+## Python tutorials
+
 * Main CatBoost tutorial with base features demonstration:
     * __kaggle_titanic_catboost_demo.ipynb__ 
         * This tutorial shows how to train a model on Titanic kaggle dataset. Examples of cross validation, parameter tunning and overfitting detection are provided.
@@ -23,3 +25,9 @@
 * CatBoost and CoreML:
     * __catboost_coreml_export_tutorial.ipynb__ 
         * This tutorial shows how to convert CatBoost model to CoreML format and use it on an iPhone.
+
+## R tutorials
+
+* Main CatBoost tutorial with base features demonstration:
+    * __catboost\_r\_tutorial.\*__
+         * This tutorial shows how to train a model on Titanic dataset. Examples of cross validation and parameter tunning.
