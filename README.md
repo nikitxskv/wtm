@@ -82,3 +82,17 @@ To enable rsm for feature bagging use --rsm parameter:
 catboost fit --learn-set train.tsv --test-set test.tsv --column-description train.cd  --loss-function Logloss --rsm 0.5
 ```
 
+### Params file
+
+For more convenience, you can create the params file:
+```
+{
+    "thread_count": 4,
+    "loss_function": "Logloss",
+    "iterations": 400
+}
+```
+And run the algorithm as follows:
+```
+catboost fit --learn-set train.tsv --test-set test.tsv --column-description train.cd --params-file params_file.txt
+```
