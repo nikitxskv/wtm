@@ -1,1 +1,1 @@
-[lol](./lol.Rmd)
+[lol](lol.Rmd)
